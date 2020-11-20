@@ -20,6 +20,3 @@ option(TESTS "Build tests" OFF)
 
 # Enable benchmarking
 option(BENCHMARKS "Build benchmarks" OFF)
-
-# Enable code_coverage interface library
-include(${CompileOptionsRoot}/CodeCoverage.cmake)
