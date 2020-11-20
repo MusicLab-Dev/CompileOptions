@@ -20,3 +20,11 @@ option(TESTS "Build tests" OFF)
 
 # Enable benchmarking
 option(BENCHMARKS "Build benchmarks" OFF)
+
+# Helper to add a submodule directory
+function(add_submodule_directory SubmoduleDir)
+    set(TESTS OFF)
+    set(BENCHMARKS OFF)
+    set(CODE_COVERAGE OFF)
+    add_subdirectory(${SubmoduleDir})
+endfunction()
