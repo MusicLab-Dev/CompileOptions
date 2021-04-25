@@ -8,6 +8,18 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(
         -Wall
         -fdiagnostics-color=always
+        -Wextra
+        -Wpendantic
+        -Wconversion
+        -Wcast-align
+        -Wunnused
+        -Wshadow
+        -Wold-style-cast
+        -Wpointer-arith
+        -Wcast-qual
+        -Wmissing-prototypes
+        -Wno-missing-braces
+        -Werror
     )
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     # Enable __VA_OPT__
