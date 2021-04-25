@@ -9,10 +9,10 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         -Wall
         -fdiagnostics-color=always
         -Wextra
-        -Wpendantic
+        -Wpedantic
         -Wconversion
         -Wcast-align
-        -Wunnused
+        -Wunused
         -Wshadow
         -Wold-style-cast
         -Wpointer-arith
