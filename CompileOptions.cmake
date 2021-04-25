@@ -17,6 +17,9 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     add_compile_options(
         /Zc:preprocessor
     )
+    add_compile_definitions(
+        NOMINMAX
+    )
 endif()
 
 # Enable unit testing
