@@ -11,7 +11,6 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         -Wextra
         -Wpedantic
         -Wconversion
-        -Wcast-align
         -Wunused
         -Wold-style-cast
         -Wpointer-arith
