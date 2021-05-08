@@ -1,5 +1,11 @@
 get_filename_component(CompileOptionsRoot ${CMAKE_CURRENT_LIST_FILE} PATH)
 
+if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "armv6l")
+    set(WerrorFlag "")
+else()
+    set(WerrorFlag "-Werror")
+endif()
+
 # Add compiler specific flags
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     message("Compiling for GNU or Clang, setting C++ 17")
@@ -16,7 +22,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         -Wpointer-arith
         -Wcast-qual
         -Wno-missing-braces
-        -Werror
+        ${WerrorFlag}
     )
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     # Enable __VA_OPT__
