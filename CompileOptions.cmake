@@ -1,8 +1,8 @@
 get_filename_component(CompileOptionsRoot ${CMAKE_CURRENT_LIST_FILE} PATH)
 
-if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "armv6l")
+if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "armv6l" OR CMAKE_CXX_COMPILER_ID MATCHES "Apple")
     set(WerrorFlag "")
-else()
+elseif()
     set(WerrorFlag "-Werror")
 endif()
 
