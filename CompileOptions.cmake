@@ -8,8 +8,13 @@ endif()
 
 # Add compiler specific flags
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    message("Compiling for GNU or Clang, setting C++ 17")
-    set(CMAKE_CXX_STANDARD 17)
+    if (CMAKE_CXX_COMPILER_ID MATCHES "Apple")
+        message("Compiling for Apple, setting C++ 20")
+        set(CMAKE_CXX_STANDARD 20)
+    else()
+        message("Compiling for GNU or Clang, setting C++ 17")
+        set(CMAKE_CXX_STANDARD 17)
+    endif()
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
     add_compile_options(
         -Wall
