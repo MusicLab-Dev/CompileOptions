@@ -6,14 +6,16 @@ elseif()
     set(WerrorFlag "-Werror")
 endif()
 
+# Set C++ standard version
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Add compiler specific flags
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     if (CMAKE_CXX_COMPILER_ID MATCHES "Apple")
-        message("Compiling for Apple, setting C++ 20")
-        set(CMAKE_CXX_STANDARD 20)
+        message("Compiling for Apple")
     else()
-        message("Compiling for GNU or Clang, setting C++ 17")
-        set(CMAKE_CXX_STANDARD 17)
+        message("Compiling for GNU or Clang")
     endif()
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
     add_compile_options(
@@ -31,9 +33,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     )
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     # Enable __VA_OPT__
-    message("Compiling for MSVC, setting C++ 20 and preprocessor")
-    set(CMAKE_CXX_STANDARD 20)
-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    message("Compiling for MSVC, setting C++ 20 preprocessor")
     add_compile_options(
         /Zc:preprocessor
     )
